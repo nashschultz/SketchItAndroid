@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DrawActivity">
+
+    <com.nashschultz.sketchit.PaintView
+        android:id="@+id/paintView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-60dp"
+        tools:layout_editor_absoluteY="-16dp" />
+
+    <Button
+        android:id="@+id/eraserButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="35dp"
+        android:alpha=".4"
+        android:background="@drawable/eraser"
+        android:onClick="changeColor"
+        app:layout_constraintBottom_toTopOf="@+id/wordLabel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/brownColor"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:alpha=".4"
+        android:background="#654321"
+        android:onClick="changeColor"
+        app:layout_constraintBottom_toTopOf="@+id/eraserButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/blackColor"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:background="#000000"
+        android:onClick="changeColor"
+        app:layout_constraintBottom_toTopOf="@+id/redColor"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/redColor"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:alpha=".4"
+        android:background="#FC3D39"
+        android:onClick="changeColor"
+        app:layout_constraintBottom_toTopOf="@+id/yellowColor"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/yellowColor"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:alpha=".4"
+        android:background="#FECB2E"
+        android:onClick="changeColor"
+        app:layout_constraintBottom_toTopOf="@+id/greenColor"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/greenColor"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:alpha=".4"
+        android:background="#53D769"
+        android:onClick="changeColor"
+        app:layout_constraintBottom_toTopOf="@+id/blueColor"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/blueColor"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:alpha=".4"
+        android:background="#147EFB"
+        android:onClick="changeColor"
+        app:layout_constraintBottom_toTopOf="@+id/pinkColor"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/pinkColor"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:alpha=".4"
+        android:background="#FC3158"
+        android:onClick="changeColor"
+        app:layout_constraintBottom_toTopOf="@+id/purpleColor"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/purpleColor"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:alpha=".4"
+        android:background="#AF52DE"
+        android:onClick="changeColor"
+        app:layout_constraintBottom_toTopOf="@+id/brownColor"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/trashCanButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:drawable/ic_menu_delete"
+        android:onClick="deleteDrawing"
+        app:layout_constraintBottom_toTopOf="@+id/strokeButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/strokeButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/dot1"
+        android:onClick="setCurrentStroke"
+        app:layout_constraintBottom_toTopOf="@+id/blackColor"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/wordLabel"
+        android:layout_width="364dp"
+        android:layout_height="47dp"
+        android:gravity="center"
+        android:text="@string/you_are_drawing"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/timeLeftLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/flashWord"
+        android:layout_width="364dp"
+        android:layout_height="90dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/paintView"
+        app:layout_constraintEnd_toEndOf="@+id/paintView"
+        app:layout_constraintStart_toStartOf="@+id/paintView"
+        app:layout_constraintTop_toTopOf="@+id/paintView" />
+
+    <TextView
+        android:id="@+id/timeLeftLabel"
+        android:layout_width="364dp"
+        android:layout_height="47dp"
+        android:gravity="center"
+        android:text="@string/time_left"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/paintView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
